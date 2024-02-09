@@ -27,6 +27,8 @@ let questionsDict ={
 
 
 function setup() {
+    getAudioContext().suspend();
+
     cnv = createCanvas(800, 400);
     cnvDiv = select("#canvas");
     cnv.id('cnv');
@@ -35,6 +37,9 @@ function setup() {
     textSize(30);
     textWrap(WORD);
     fill("white");
+
+
+
 
     recBool  = false;
 
@@ -97,5 +102,9 @@ function next(){
     statusTag.html("Click 'START' to record...");
     ctr += 1;
 
+}
+
+function mousePressed() {
+    userStartAudio();
 }
 
